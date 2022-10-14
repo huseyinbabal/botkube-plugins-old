@@ -1,4 +1,4 @@
-module github.com/huseyinbabal/bokube-plugins/internal
+module github.com/huseyinbabal/botkube-plugins/internal
 
 go 1.19
 
