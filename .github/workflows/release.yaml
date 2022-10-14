@@ -35,6 +35,8 @@ jobs:
       - name: Create Release
         uses: actions/create-release@v1
         id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           draft: false
           prerelease: false
@@ -44,6 +46,8 @@ jobs:
 
       - name: Publish Plugin
         uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           asset_path: ./build/${{ steps.extract.outputs.plugin }}
           asset_name: ${{ steps.extract.outputs.plugin }}
