@@ -1,11 +1,11 @@
-module github.com/huseyinbabal/bokube-plugins/kubernetes
+module github.com/huseyinbabal/botkube-plugins/kubernetes
 
 go 1.19
 
-replace github.com/huseyinbabal/bokube-plugins/internal => ../../internal
+replace github.com/huseyinbabal/botkube-plugins/internal => ../../internal
 
 require (
-	github.com/huseyinbabal/bokube-plugins/internal v0.0.0-00010101000000-000000000000
+	github.com/huseyinbabal/botkube-plugins/internal v0.0.0-00010101000000-000000000000
 	k8s.io/client-go v0.25.3
 )
 

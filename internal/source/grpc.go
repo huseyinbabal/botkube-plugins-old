@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/hashicorp/go-plugin"
-	botkubeplugin "github.com/huseyinbabal/bokube-plugins/internal/source/proto"
+	botkubeplugin "github.com/huseyinbabal/botkube-plugins/internal/source/proto"
 	"google.golang.org/protobuf/types/known/emptypb"
 	"io"
 	"log"

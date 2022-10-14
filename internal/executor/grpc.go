@@ -3,7 +3,7 @@ package botkubeplugin
 import (
 	"context"
 	"github.com/hashicorp/go-plugin"
-	botkubeplugin "github.com/huseyinbabal/bokube-plugins/internal/executor/proto"
+	botkubeplugin "github.com/huseyinbabal/botkube-plugins/internal/executor/proto"
 )
 
 type ExecutorGRPCServer struct {

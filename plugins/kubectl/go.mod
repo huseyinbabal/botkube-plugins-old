@@ -1,10 +1,10 @@
-module github.com/huseyinbabal/bokube-plugins/kubectl
+module github.com/huseyinbabal/botkube-plugins/kubectl
 
 go 1.19
 
-replace github.com/huseyinbabal/bokube-plugins/internal => ../../internal
+replace github.com/huseyinbabal/botkube-plugins/internal => ../../internal
 
-require github.com/huseyinbabal/bokube-plugins/internal v0.0.0-00010101000000-000000000000
+require github.com/huseyinbabal/botkube-plugins/internal v0.0.0-00010101000000-000000000000
 
 require (
 	github.com/fatih/color v1.7.0 // indirect

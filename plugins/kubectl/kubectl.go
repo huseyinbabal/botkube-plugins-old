@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/hashicorp/go-plugin"
-	"github.com/huseyinbabal/bokube-plugins/internal"
-	botkubeplugin "github.com/huseyinbabal/bokube-plugins/internal/executor"
+	"github.com/huseyinbabal/botkube-plugins/internal"
+	botkubeplugin "github.com/huseyinbabal/botkube-plugins/internal/executor"
 	"os/exec"
 	"strings"
 )

@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/hashicorp/go-plugin"
-	"github.com/huseyinbabal/bokube-plugins/internal"
-	botkubeplugin "github.com/huseyinbabal/bokube-plugins/internal/source"
+	"github.com/huseyinbabal/botkube-plugins/internal"
+	botkubeplugin "github.com/huseyinbabal/botkube-plugins/internal/source"
 	kubeinformers "k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/cache"
