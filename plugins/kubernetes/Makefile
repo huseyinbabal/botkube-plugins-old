@@ -1,4 +1,4 @@
 build:
 	go mod tidy && \
-	go build -o sources-kubernetes && \
-		mv sources-kubernetes ../../build
+	mkdir build && \
+	go build -o ./build/kubernetes
