@@ -48,6 +48,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/${{ steps.extract.outputs.plugin }}
           asset_name: ${{ steps.extract.outputs.plugin }}
           asset_content_type: application/octet-stream
