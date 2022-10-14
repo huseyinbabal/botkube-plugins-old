@@ -7,7 +7,7 @@ on:
       - '*/v*'
 
 jobs:
-  build:
+  release:
 
     runs-on: ubuntu-latest
     steps:
@@ -17,6 +17,33 @@ jobs:
 #        uses: actions/setup-go@v3
 #        with:
 #          go-version: 1.19
-      - name: Version
+      - name: Extract Release Metadata
+        id: extract
         run: |
-          echo ${{github.ref_name}}
+          PLUGIN=$(echo ${{github.ref_name}} | awk -F \/ '{print $1}')
+          VERSION=$(echo ${{github.ref_name}} | awk -F \/ '{print $2}')
+          
+          echo ::set-output name=plugin::$PLUGIN
+          echo ::set-output name=version::$VERSION
+
+      - name: Build
+        run: |
+          cd plugins/${{ steps.extract.outputs.plugin }}
+          make build
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{github.ref_name}}
+          tag_name: ${{github.ref_name}}
+          body_path: "${{ steps.extract.outputs.plugin }}@${{ steps.extract.outputs.version }} has been released"
+
+      - name: Publish Plugin
+        uses: actions/upload-release-asset@v1
+        with:
+          asset_path: ./build/${{ steps.extract.outputs.plugin }}
+          asset_name: ${{ steps.extract.outputs.plugin }}
+          asset_content_type: application/octet-stream
