@@ -3,12 +3,12 @@
     "name": "kubernetes",
     "type": "source",
     "description": "Kubernetes source plugin to consume events from Kubernetes Events API.",
-    "version": "v1.0.7"
+    "version": "v1.0.9"
   },
   {
     "name": "kubectl",
     "type": "executor",
     "description": "Kubectl executor plugin to handle given command in configured k8s cluster.",
-    "version": "v1.0.0"
+    "version": "v1.0.9"
   }
 ]
