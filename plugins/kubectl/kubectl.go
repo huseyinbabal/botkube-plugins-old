@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/hashicorp/go-plugin"
-	"github.com/huseyinbabal/botkube-plugins/internal"
-	botkubeplugin "github.com/huseyinbabal/botkube-plugins/internal/executor"
+	"github.com/huseyinbabal/botkube-plugins/api"
+	botkubeplugin "github.com/huseyinbabal/botkube-plugins/api/executor"
 	"os/exec"
 	"strings"
 )
@@ -34,7 +34,7 @@ func run(command string) (string, error) {
 }
 
 func main() {
-	internal.Serve(map[string]plugin.Plugin{
+	api.Serve(map[string]plugin.Plugin{
 		"kubectl": &botkubeplugin.ExecutorPlugin{Impl: &KubectlExecutor{}},
 	})
 }

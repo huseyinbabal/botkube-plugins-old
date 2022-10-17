@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.6
-// source: internal/source/proto/source.proto
+// source: api/source/proto/source.proto
 
 package botkubeplugin
 
@@ -129,5 +129,5 @@ var Source_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "internal/source/proto/source.proto",
+	Metadata: "api/source/proto/source.proto",
 }

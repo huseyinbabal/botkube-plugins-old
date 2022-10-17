@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/hashicorp/go-plugin"
-	"github.com/huseyinbabal/botkube-plugins/internal"
-	botkubeplugin "github.com/huseyinbabal/botkube-plugins/internal/source"
+	"github.com/huseyinbabal/botkube-plugins/api"
+	botkubeplugin "github.com/huseyinbabal/botkube-plugins/api/source"
 	kubeinformers "k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/cache"
@@ -57,7 +57,7 @@ func listenEvents(ch chan interface{}) {
 }
 
 func main() {
-	internal.Serve(map[string]plugin.Plugin{
+	api.Serve(map[string]plugin.Plugin{
 		"kubernetes": &botkubeplugin.SourcePlugin{Impl: &KubernetesSource{}},
 	})
 }

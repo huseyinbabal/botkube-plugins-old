@@ -1,4 +1,4 @@
-module github.com/huseyinbabal/botkube-plugins/internal
+module github.com/huseyinbabal/botkube-plugins/api
 
 go 1.19
 

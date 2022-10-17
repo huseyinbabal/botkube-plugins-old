@@ -15,26 +15,26 @@ install:
 
 protoc:
 	# Clean
-	rm -rf internal/source/proto/*.pb.go internal/executor/proto/*pb.go
+	rm -rf api/source/proto/*.pb.go api/executor/proto/*pb.go
 
 	# Compile
-	cd internal/source
+	cd api/source
 	protoc \
 		--go_out=. \
 		--go_opt=paths=source_relative \
 		--go-grpc_out=. \
-		--go-grpc_opt=paths=source_relative internal/source/**/*.proto
+		--go-grpc_opt=paths=source_relative api/source/**/*.proto
 
-	cd internal/executor
+	cd api/executor
 	protoc \
 		--go_out=. \
 		--go_opt=paths=source_relative \
 		--go-grpc_out=. \
-		--go-grpc_opt=paths=source_relative internal/executor/**/*.proto
+		--go-grpc_opt=paths=source_relative api/executor/**/*.proto
 
 	## Refresh dependencies
-	cd internal/source/proto && go mod tidy
-	cd internal/executor/proto && go mod tidy
+	cd api/source/proto && go mod tidy
+	cd api/executor/proto && go mod tidy
 
 $(EXECUTORS_PLUGIN_DIRS):
 	$(MAKE) -C $@

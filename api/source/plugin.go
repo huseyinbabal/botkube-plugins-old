@@ -3,7 +3,7 @@ package botkubeplugin
 import (
 	"context"
 	"github.com/hashicorp/go-plugin"
-	botkubeplugin "github.com/huseyinbabal/botkube-plugins/internal/source/proto"
+	botkubeplugin "github.com/huseyinbabal/botkube-plugins/api/source/proto"
 	"google.golang.org/grpc"
 )
 

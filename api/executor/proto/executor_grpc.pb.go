@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.6
-// source: internal/executor/proto/executor.proto
+// source: api/executor/proto/executor.proto
 
 package botkubeplugin
 
@@ -101,5 +101,5 @@ var Executor_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "internal/executor/proto/executor.proto",
+	Metadata: "api/executor/proto/executor.proto",
 }
